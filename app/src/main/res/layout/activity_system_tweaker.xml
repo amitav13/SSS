@@ -52,13 +52,14 @@
         <TextView
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
+            android:textSize="20sp"
             android:text="System Price"/>
         <com.robinhood.ticker.TickerView
             android:id="@+id/systemPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="16sp"/>
+            android:textSize="20sp"
+            android:textColor="@color/colorAccent"/>
 
     </LinearLayout>
 
@@ -69,13 +70,15 @@
         <TextView
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:text="Lifetime units generated"/>
+            android:textSize="20sp"
+            android:text="Lifetime units"/>
         <com.robinhood.ticker.TickerView
             android:id="@+id/lifetime_units"
             android:layout_width="wrap_content"
-            android:textSize="16sp"
-            android:layout_height="wrap_content" />
+            android:textSize="20sp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorAccent"
+            />
 
     </LinearLayout>
 
@@ -86,13 +89,15 @@
         <TextView
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
+            android:textSize="20sp"
             android:text="Payback period"/>
         <com.robinhood.ticker.TickerView
             android:id="@+id/payback"
             android:layout_width="wrap_content"
-            android:textSize="16sp"
-            android:layout_height="wrap_content" />
+            android:textSize="20sp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorAccent"
+            />
 
     </LinearLayout>
 

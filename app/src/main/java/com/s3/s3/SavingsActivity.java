@@ -29,8 +29,8 @@ public class SavingsActivity extends AppCompatActivity {
 
         UserData userData = EventBus.getDefault().getStickyEvent(UserData.class);
         SolarModel model = new SolarModel(userData.avgBill, userData.rooftopArea, userData.state);
-        kwSystem.setText("KW System: " + model.getKWSystem() + " kW");
-        annualSavings.setText("Annual Savings: Rs." + model.getAnnualSavings());
-        co2Offset.setText("CO2 offset: " + model.getCo2Offset() + " tons");
+        kwSystem.setText(model.getKWSystem() + " kWp");
+        annualSavings.setText("Rs." + model.getAnnualSavings());
+        co2Offset.setText(model.getCo2Offset() + " tons");
     }
 }
