@@ -15,18 +15,33 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginBottom="64dp">
+        android:layout_marginBottom="8dp">
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Inverter">
+        </TextView>
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Panel">
+
+        </TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="84dp">
         <Spinner
             android:id="@+id/inverter_spinner"
             android:layout_width="200dp"
             android:layout_height="wrap_content">
-
         </Spinner>
         <Spinner
             android:id="@+id/module_spinner"
             android:layout_width="200dp"
             android:layout_height="wrap_content">
-
         </Spinner>
     </LinearLayout>
 
@@ -37,11 +52,13 @@
         <TextView
             android:layout_width="200dp"
             android:layout_height="wrap_content"
+            android:textSize="16sp"
             android:text="System Price"/>
         <com.robinhood.ticker.TickerView
             android:id="@+id/systemPrice"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textSize="16sp"/>
 
     </LinearLayout>
 
@@ -52,10 +69,12 @@
         <TextView
             android:layout_width="200dp"
             android:layout_height="wrap_content"
+            android:textSize="16sp"
             android:text="Lifetime units generated"/>
         <com.robinhood.ticker.TickerView
             android:id="@+id/lifetime_units"
             android:layout_width="wrap_content"
+            android:textSize="16sp"
             android:layout_height="wrap_content" />
 
     </LinearLayout>
@@ -67,17 +86,27 @@
         <TextView
             android:layout_width="200dp"
             android:layout_height="wrap_content"
+            android:textSize="16sp"
             android:text="Payback period"/>
         <com.robinhood.ticker.TickerView
             android:id="@+id/payback"
             android:layout_width="wrap_content"
+            android:textSize="16sp"
             android:layout_height="wrap_content" />
 
     </LinearLayout>
 
     <TextView
-        android:id="@+id/comments"
+        android:id="@+id/inverter_comments"
         android:layout_width="match_parent"
+        android:textSize="18sp"
+        android:paddingTop="16dp"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/panel_comments"
+        android:layout_width="match_parent"
+        android:textSize="18sp"
+        android:paddingTop="16dp"
         android:layout_height="wrap_content" />
 
     <Button
@@ -85,5 +114,9 @@
         android:layout_marginTop="64dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Find installers for your rooftop"/>
+        android:text="Find installers for your rooftop"
+        android:gravity="center"
+        android:background="@color/colorPrimaryDark"
+        android:padding="4dp"
+        android:layout_gravity="center"/>
 </LinearLayout>

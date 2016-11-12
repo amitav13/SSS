@@ -22,7 +22,8 @@ public class SystemTweakerActivity extends AppCompatActivity {
     TickerView systemPrice;
     TickerView lifetimeUnits;
     TickerView paybackPeriod;
-    TextView comments;
+    TextView inverterComments;
+    TextView panelComments;
     SolarModel model;
     Button findInstallers;
 
@@ -36,17 +37,18 @@ public class SystemTweakerActivity extends AppCompatActivity {
         systemPrice = (TickerView) findViewById(R.id.systemPrice);
         lifetimeUnits = (TickerView) findViewById(R.id.lifetime_units);
         paybackPeriod = (TickerView) findViewById(R.id.payback);
-        comments = (TextView) findViewById(R.id.comments);
+        inverterComments = (TextView) findViewById(R.id.inverter_comments);
+        panelComments = (TextView) findViewById(R.id.panel_comments);
+
         findInstallers = (Button) findViewById(R.id.find_installers);
 
-        invertorSpinner.setAdapter(new ArrayAdapter<Invertor>(this, R.layout.spinner_item, Invertor.values()));
+        invertorSpinner.setAdapter(new ArrayAdapter<Inverter>(this, R.layout.spinner_item, Inverter.values()));
         panelSpinner.setAdapter(new ArrayAdapter<Panel>(this, R.layout.spinner_item, Panel.values()));
         invertorSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 itemSelected();
-                Invertor invertor = Invertor.valueOf(invertorSpinner.getSelectedItem().toString());
-                comments.setText(invertor.comment);
+                Inverter inverter = Inverter.valueOf(invertorSpinner.getSelectedItem().toString());
             }
 
             @Override
@@ -59,7 +61,6 @@ public class SystemTweakerActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 itemSelected();
                 Panel panel = Panel.valueOf(panelSpinner.getSelectedItem().toString());
-                comments.setText(panel.comment);
             }
 
             @Override
@@ -85,9 +86,11 @@ public class SystemTweakerActivity extends AppCompatActivity {
 
     public void itemSelected() {
         Panel panel = Panel.valueOf(panelSpinner.getSelectedItem().toString());
-        Invertor invertor = Invertor.valueOf(invertorSpinner.getSelectedItem().toString());
-        systemPrice.setText("Rs." + model.getSystemPrice(panel, invertor));
-        lifetimeUnits.setText(model.getLifetimeUnits(panel, invertor) + " units");
-        paybackPeriod.setText(model.getPayback(panel, invertor) + " years");
+        Inverter inverter = Inverter.valueOf(invertorSpinner.getSelectedItem().toString());
+        systemPrice.setText("Rs." + model.getSystemPrice(panel, inverter));
+        lifetimeUnits.setText(model.getLifetimeUnits(panel, inverter) + " units");
+        paybackPeriod.setText(model.getPayback(panel, inverter) + " years");
+        inverterComments.setText(inverter.comment);
+        panelComments.setText(panel.comment);
     }
 }

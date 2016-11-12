@@ -43,63 +43,63 @@ public class SolarModel {
         return co2Offset;
     }
 
-    public int getSystemPrice(Panel panel, Invertor invertor) {
-        systemPrice = ((Double)(kwSystem * getSystemPriceRatio(panel, invertor))).intValue();
+    public int getSystemPrice(Panel panel, Inverter inverter) {
+        systemPrice = ((Double)(kwSystem * getSystemPriceRatio(panel, inverter))).intValue();
         return systemPrice;
     }
 
-    public int getLifetimeUnits(Panel panel, Invertor invertor) {
-        lifetimeUnits = getLifetimeUnitsRatio(panel, invertor) * 25;
+    public int getLifetimeUnits(Panel panel, Inverter inverter) {
+        lifetimeUnits = getLifetimeUnitsRatio(panel, inverter) * 25;
         return lifetimeUnits;
     }
 
-    public int getPayback(Panel panel, Invertor invertor) {
-        double paybackk = (getSystemPrice(panel, invertor) * 25)/(getLifetimeUnits(panel, invertor) * getKWSystem() * state.pricePerUnit);
+    public int getPayback(Panel panel, Inverter inverter) {
+        double paybackk = (getSystemPrice(panel, inverter) * 25)/(getLifetimeUnits(panel, inverter) * getKWSystem() * state.pricePerUnit);
         payback = ((Double)paybackk).intValue();
         return payback;
     }
 
-    public int getSystemPriceRatio(Panel panel, Invertor invertor) {
-        if (panel == Panel.CanadianSolar && invertor == Invertor.SMA) {
+    public int getSystemPriceRatio(Panel panel, Inverter inverter) {
+        if (panel == Panel.CanadianSolar && inverter == Inverter.SMA) {
             return 65000;
-        } else if (panel == Panel.VikramEldora && invertor == Invertor.SMA) {
+        } else if (panel == Panel.VikramEldora && inverter == Inverter.SMA) {
             return 65000;
-        } else if (panel == Panel.Sonali && invertor == Invertor.SMA) {
+        } else if (panel == Panel.Sonali && inverter == Inverter.SMA) {
             return 54600;
-        } else if (panel == Panel.CanadianSolar && invertor == Invertor.Fronius) {
+        } else if (panel == Panel.CanadianSolar && inverter == Inverter.Fronius) {
             return 61000;
-        } else if (panel == Panel.VikramEldora && invertor == Invertor.Fronius) {
+        } else if (panel == Panel.VikramEldora && inverter == Inverter.Fronius) {
             return 61000;
-        } else if (panel == Panel.Sonali && invertor == Invertor.Fronius) {
+        } else if (panel == Panel.Sonali && inverter == Inverter.Fronius) {
             return 50600;
-        } else if (panel == Panel.CanadianSolar && invertor == Invertor.Growatt) {
+        } else if (panel == Panel.CanadianSolar && inverter == Inverter.Growatt) {
             return 58000;
-        } else if (panel == Panel.VikramEldora && invertor == Invertor.Growatt) {
+        } else if (panel == Panel.VikramEldora && inverter == Inverter.Growatt) {
             return 58000;
-        } else if (panel == Panel.Sonali && invertor == Invertor.Growatt) {
+        } else if (panel == Panel.Sonali && inverter == Inverter.Growatt) {
             return 47600;
         }
         return 65000;
     }
 
-    public int getLifetimeUnitsRatio(Panel panel, Invertor invertor) {
-        if (panel == Panel.CanadianSolar && invertor == Invertor.SMA) {
+    public int getLifetimeUnitsRatio(Panel panel, Inverter inverter) {
+        if (panel == Panel.CanadianSolar && inverter == Inverter.SMA) {
             return 1497;
-        } else if (panel == Panel.VikramEldora && invertor == Invertor.SMA) {
+        } else if (panel == Panel.VikramEldora && inverter == Inverter.SMA) {
             return 1478;
-        } else if (panel == Panel.Sonali && invertor == Invertor.SMA) {
+        } else if (panel == Panel.Sonali && inverter == Inverter.SMA) {
             return 1384;
-        } else if (panel == Panel.CanadianSolar && invertor == Invertor.Fronius) {
+        } else if (panel == Panel.CanadianSolar && inverter == Inverter.Fronius) {
             return 1482;
-        } else if (panel == Panel.VikramEldora && invertor == Invertor.Fronius) {
+        } else if (panel == Panel.VikramEldora && inverter == Inverter.Fronius) {
             return 1464;
-        } else if (panel == Panel.Sonali && invertor == Invertor.Fronius) {
+        } else if (panel == Panel.Sonali && inverter == Inverter.Fronius) {
             return 1398;
-        } else if (panel == Panel.CanadianSolar && invertor == Invertor.Growatt) {
+        } else if (panel == Panel.CanadianSolar && inverter == Inverter.Growatt) {
             return 1485;
-        } else if (panel == Panel.VikramEldora && invertor == Invertor.Growatt) {
+        } else if (panel == Panel.VikramEldora && inverter == Inverter.Growatt) {
             return 1461;
-        } else if (panel == Panel.Sonali && invertor == Invertor.Growatt) {
+        } else if (panel == Panel.Sonali && inverter == Inverter.Growatt) {
             return 1375;
         }
         return 1400;
