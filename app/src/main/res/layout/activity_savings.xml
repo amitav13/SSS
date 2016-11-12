@@ -9,18 +9,32 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
+    android:gravity="center"
     tools:context="com.s3.s3.SavingsActivity">
 
     <TextView
         android:id="@+id/kw_system"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        />
     <TextView
         android:id="@+id/annual_savings"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        />
     <TextView
         android:id="@+id/co2_offset"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        />
+    <Button
+        android:id="@+id/explore_systems"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Explore Systems"
+        android:layout_marginTop="64dp"
+        />
 </LinearLayout>
