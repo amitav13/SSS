@@ -1,11 +1,14 @@
 package com.s3.s3;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 
 import com.github.paolorotolo.appintro.AppIntro2;
 import com.github.paolorotolo.appintro.AppIntroFragment;
+
+import org.greenrobot.eventbus.EventBus;
 
 public class MainActivity extends AppIntro2 {
 
@@ -16,10 +19,23 @@ public class MainActivity extends AppIntro2 {
                 R.drawable.ic_brightness_7_black_24dp, getResources().getColor(R.color.colorPrimary)
                 //,getResources().getColor(R.color.text_black), getResources().getColor(R.color.text_black)
         ));
-        addSlide(new MonthlyBillFragment());
-        addSlide(new RooftopAreaFragment());
+        addSlide(new UserInputFragment());
+//        addSlide(new RooftopAreaFragment());
         showSkipButton(false);
         setCustomTransformer(new ZoomOutPageTransformer());
+    }
+
+    @Override
+    public void onDonePressed(Fragment currentFragment) {
+        super.onDonePressed(currentFragment);
+        UserInputFragment fragment = (UserInputFragment) currentFragment;
+        IndianStates state = IndianStates.valueOf(fragment.indianStateSpinner.getSelectedItem().toString());
+        int avgBill = Integer.parseInt(fragment.avgPrice.getText().toString());
+        int rooftopArea = Integer.parseInt(fragment.rooftopArea.getText().toString());
+
+        EventBus.getDefault().postSticky(new UserData(state, rooftopArea, avgBill));
+
+
     }
 
     public class ZoomOutPageTransformer implements ViewPager.PageTransformer {

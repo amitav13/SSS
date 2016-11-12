@@ -6,4 +6,6 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="average_monthly_bill">Average monthly bill?</string>
+    <string name="total_rooftop_area">Total rooftop area in sq. ft</string>
+    <string name="area_desc">Total area without any shadows or obstacles</string>
 </resources>
