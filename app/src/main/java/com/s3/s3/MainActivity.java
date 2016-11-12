@@ -1,5 +1,6 @@
 package com.s3.s3;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -29,12 +30,12 @@ public class MainActivity extends AppIntro2 {
     public void onDonePressed(Fragment currentFragment) {
         super.onDonePressed(currentFragment);
         UserInputFragment fragment = (UserInputFragment) currentFragment;
-        IndianStates state = IndianStates.valueOf(fragment.indianStateSpinner.getSelectedItem().toString());
+        IndianState state = IndianState.valueOf(fragment.indianStateSpinner.getSelectedItem().toString());
         int avgBill = Integer.parseInt(fragment.avgPrice.getText().toString());
         int rooftopArea = Integer.parseInt(fragment.rooftopArea.getText().toString());
 
         EventBus.getDefault().postSticky(new UserData(state, rooftopArea, avgBill));
-
+        startActivity(new Intent(this, SavingsActivity.class));
 
     }
 

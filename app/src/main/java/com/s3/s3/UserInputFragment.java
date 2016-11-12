@@ -33,7 +33,7 @@ public class UserInputFragment extends Fragment {
         avgPrice = (EditText) rootView.findViewById(R.id.avg_monthly_bill);
         indianStateSpinner = (Spinner) rootView.findViewById(R.id.indian_state_spinner);
 
-        indianStateSpinner.setAdapter(new ArrayAdapter<IndianStates>(getActivity(), android.R.layout.simple_spinner_item, IndianStates.values()));
+        indianStateSpinner.setAdapter(new ArrayAdapter<IndianState>(getActivity(), android.R.layout.simple_spinner_item, IndianState.values()));
         return rootView;
     }
 

@@ -5,11 +5,11 @@ package com.s3.s3;
  */
 
 public class UserData {
-    IndianStates state;
+    IndianState state;
     int rooftopArea;
     int avgBill;
 
-    public UserData(IndianStates state, int rooftopArea, int avgBill) {
+    public UserData(IndianState state, int rooftopArea, int avgBill) {
         this.state = state;
         this.rooftopArea = rooftopArea;
         this.avgBill = avgBill;
