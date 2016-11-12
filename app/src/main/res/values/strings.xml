@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">S3</string>
+    <string name="intro_title">Silly Simple Solar</string>
+    <string name="intro_description">How about giving me a good description?!</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="average_monthly_bill">Average monthly bill?</string>
 </resources>
