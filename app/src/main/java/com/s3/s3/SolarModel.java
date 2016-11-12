@@ -17,6 +17,7 @@ public class SolarModel {
     int co2Offset;
     int systemPrice;
     int lifetimeUnits;
+    int payback;
 
     public SolarModel(int avgBill, int rooftopArea, IndianState state) {
         this.avgBill = avgBill;
@@ -28,7 +29,6 @@ public class SolarModel {
         kwSystem = Double.valueOf(df.format(kwSystem));
         annualSavings = ((Double)(kwSystem * state.avgIrradiation * 365 * state.pricePerUnit)).intValue();
         co2Offset = ((Double)(kwSystem * state.avgIrradiation * 365 * 25 * 0.94/907)).intValue();
-        systemPrice = ((Double)(kwSystem * 65000)).intValue();
     }
 
     public double getKWSystem() {
@@ -44,7 +44,7 @@ public class SolarModel {
     }
 
     public int getSystemPrice(Panel panel, Invertor invertor) {
-        systemPrice = ((Double)(kwSystem * getRatio(panel, invertor))).intValue();
+        systemPrice = ((Double)(kwSystem * getSystemPriceRatio(panel, invertor))).intValue();
         return systemPrice;
     }
 
@@ -53,7 +53,13 @@ public class SolarModel {
         return lifetimeUnits;
     }
 
-    public int getRatio(Panel panel, Invertor invertor) {
+    public int getPayback(Panel panel, Invertor invertor) {
+        double paybackk = (getSystemPrice(panel, invertor) * 25)/(getLifetimeUnits(panel, invertor) * getKWSystem() * state.pricePerUnit);
+        payback = ((Double)paybackk).intValue();
+        return payback;
+    }
+
+    public int getSystemPriceRatio(Panel panel, Invertor invertor) {
         if (panel == Panel.CanadianSolar && invertor == Invertor.SMA) {
             return 65000;
         } else if (panel == Panel.VikramEldora && invertor == Invertor.SMA) {

@@ -35,5 +35,6 @@ dependencies {
     compile 'com.github.paolorotolo:appintro:4.1.0'
     compile 'org.greenrobot:eventbus:3.0.0'
     compile 'com.robinhood.ticker:ticker:1.1.1'
+    compile 'com.squareup.picasso:picasso:2.5.2'
     testCompile 'junit:junit:4.12'
 }

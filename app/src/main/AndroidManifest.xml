@@ -19,7 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".SavingsActivity" />
-        <activity android:name=".SystemTweakerActivity"></activity>
+        <activity android:name=".SystemTweakerActivity" />
+        <activity android:name=".EPCListActivity"></activity>
     </application>
 
 </manifest>
